@@ -1,17 +1,23 @@
-name: GitHub CI Pipeline
+name: Added GitHub Actions CI Pipeline
+
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
+
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout Repository
-uses: actions/checkout@v4
-- name: Display Message
-run: echo "Build Started"
-- name: List Files
-run: ls
-- name: Build Successful
-run: echo "Build Completed Successfully"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Message
+        run: echo "GitHub Actions CI Pipeline is running successfully!"
+
+      - name: List Files
+        run: ls -la
+
+      - name: Build Successful
+        run: echo "Build Successful!"
